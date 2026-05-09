@@ -4,7 +4,7 @@
 
 中文期刊投稿体例常常写得很散：字号、行距、标题编号、脚注、参考文献、网格、匿名审稿要求混在一段说明里，有些还没有说完整。这个项目的目标是：你可以直接把期刊投稿网页、附件体例或自己的补充要求发给 agent，它会整理出一份可执行的排版模板，然后把 Markdown 或已有 `.docx` 稿件排成新的 Word 文件。
 
-它不是 GUI，也不是完整文献管理器。它更像一个可沉淀的“中文期刊投稿排版规则库”。
+它更像一个可沉淀的“中文期刊投稿排版规则库”：每次排版后的修正都会回到模板里，下一次继续使用。
 
 ## 典型工作流
 
@@ -40,13 +40,7 @@
 参考文献条目不要悬挂缩进，默认首行缩进 2 字符。
 ```
 
-这条规则会写回 `templates/journals/中国社会科学.yaml`。以后再次使用：
-
-```bash
---template 中国社会科学
-```
-
-就会直接使用更新后的模板，而不是依赖聊天记录或临时提醒。
+这条规则会写回 `templates/journals/中国社会科学.yaml`。以后再次让 agent 按《中国社会科学》排版时，就会直接使用更新后的模板，而不是依赖聊天记录或临时提醒。
 
 只有当你明确说“这应该成为所有中文期刊的默认规则”时，才会更新默认规则库。
 
@@ -83,59 +77,21 @@ templates/custom/     # 用户自定义模板，按需本地创建
 
 - `templates/journals/中国社会科学.yaml`
 
-## 安装
+## 使用方式
 
-开发安装：
+这个仓库主要供 agent 调用。实际使用时，不需要手动记命令；你只需要说明目标，例如：
 
-```bash
-python3 -m pip install -e ".[dev]"
+```text
+请把这篇 Markdown 按《中国社会科学》的格式排成 Word。
 ```
 
-只安装运行依赖：
+或者：
 
-```bash
-python3 -m pip install -r requirements.txt
+```text
+这是某期刊投稿要求，请先整理成模板，再把我的 Word 稿件套版。
 ```
 
-## 常用命令
-
-列出模板：
-
-```bash
-cpf list-templates
-```
-
-校验模板：
-
-```bash
-python3 scripts/validate_spec.py templates/journals/中国社会科学.yaml
-```
-
-Markdown 生成 Word：
-
-```bash
-python3 scripts/md_to_docx.py paper.md output/paper.docx --template 中国社会科学 --report output/paper.report.json
-```
-
-已有 Word 文档重新套版：
-
-```bash
-python3 scripts/apply_docx_format.py draft.docx output/draft.formatted.docx --template 中国社会科学 --report output/draft.report.json
-```
-
-保存确认后的期刊模板：
-
-```bash
-python3 scripts/save_template.py draft-spec.yaml --name "期刊名原文" --category journals
-```
-
-## 第一版边界
-
-- 不做 GUI。
-- 不承诺完整 CSL/GB7714 文献引擎。
-- 不自动重排参考文献语义顺序。
-- 不自动生成英文标题、摘要或关键词。
-- Word 文档网格、脚注域、页码域等高级项目会先记录和报告；能自动应用的部分逐步扩展。
+agent 会读取模板、生成新的 `.docx`，并把无法自动确认或暂未完全支持的项目写入报告。
 
 ## English
 
@@ -143,4 +99,4 @@ python3 scripts/save_template.py draft-spec.yaml --name "期刊名原文" --cate
 
 You can paste journal guidelines from a submission website, provide a Markdown or existing `.docx` manuscript, and generate a newly formatted Word file without overwriting the source document. Corrections made after reviewing the output can be written back into the corresponding journal template, so future runs reuse the improved style automatically.
 
-This first version focuses on deterministic formatting and template accumulation. It does not provide a GUI, a full bibliography engine, or complete Word footnote/grid automation.
+It is designed to be used through an agent workflow rather than as a command-line tool for end users.
