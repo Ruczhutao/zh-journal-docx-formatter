@@ -1,5 +1,7 @@
 # Journal DOCX Formatter
 
+[English version](README.en.md)
+
 把投稿网站上的格式要求，变成可复用、会持续学习的 Word 排版模板。📄
 
 很多期刊的投稿体例并不是一张清楚的格式表，而是散落在网页、附件和说明文字里：字号、行距、标题编号、脚注、参考文献、文档网格、匿名审稿要求，常常混在一起，有些还没有说完整。中文期刊可以用，英文期刊也可以用。
@@ -88,13 +90,3 @@ templates/custom/     # 用户自定义模板，按需本地创建
 ```
 
 agent 会读取模板、生成新的 `.docx`，并把无法自动确认或暂未完全支持的项目写入报告。
-
-## English
-
-Turn journal submission guidelines into reusable, continuously improving Word formatting templates. 📄
-
-Journal formatting rules are often scattered across submission pages, PDF attachments, and style notes: fonts, spacing, heading numbering, footnotes, references, document grids, anonymization requirements, and many small exceptions. The workflow works for both Chinese and English-language journals.
-
-You do not need to build a perfect default template first. The simplest workflow is to find the journal you plan to submit to, send its submission guidelines to an agent, and let the agent turn those requirements into a journal-specific template. Missing or unclear parts can be filled by defaults or surfaced for confirmation.
-
-The default template is optional. You can start directly from a journal submission template, format one manuscript, review the output, and tell the agent what needs to change. Those corrections are written back into the corresponding journal template, so the next run uses the improved rules automatically. 🧠
