@@ -1,0 +1,64 @@
+meta:
+  name: "圆圈上标文中注"
+  description: "引注以圆圈数字显示于文中，常见于部分社科期刊"
+  source: "preset"
+
+page:
+  paper_size: "A4"
+  top_margin: "2.54cm"
+  bottom_margin: "2.54cm"
+  left_margin: "3.17cm"
+  right_margin: "3.17cm"
+
+heading_styles:
+  1:
+    font:
+      font_family: "黑体"
+      font_size: "16pt"
+      bold: false
+    align: "center"
+    numbering: "chinese"
+    level: 1
+    line_height: 1.5
+    space_before: "18pt"
+    space_after: "12pt"
+  2:
+    font:
+      font_family: "黑体"
+      font_size: "14pt"
+      bold: false
+    align: "left"
+    numbering: "chinese_paren"
+    level: 2
+    line_height: 1.25
+    space_before: "12pt"
+    space_after: "6pt"
+
+body_style:
+  font:
+    font_family: "宋体"
+    font_size: "12pt"
+    bold: false
+  align: "justify"
+  line_height: 1.25
+  first_line_indent: "2em"
+
+abstract_style:
+  font:
+    font_family: "楷体"
+    font_size: "12pt"
+    bold: false
+  align: "justify"
+  line_height: 1.25
+
+citation:
+  style: "circled"
+  position: "in-text"
+  format_string: "{number}"
+  superscript: true
+
+reference_list:
+  enabled: true
+  sort_by: "appearance"
+  hanging_indent: "2em"
+  numbering_style: "circled"

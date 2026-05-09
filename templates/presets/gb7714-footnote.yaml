@@ -1,0 +1,64 @@
+meta:
+  name: "GB/T 7714 页下注"
+  description: "GB/T 7714 格式，引注以脚注形式显示于页面底部"
+  source: "preset"
+
+page:
+  paper_size: "A4"
+  top_margin: "2.54cm"
+  bottom_margin: "2.54cm"
+  left_margin: "3.17cm"
+  right_margin: "3.17cm"
+
+heading_styles:
+  1:
+    font:
+      font_family: "黑体"
+      font_size: "14pt"
+      bold: false
+    align: "center"
+    numbering: "chinese"
+    level: 1
+    line_height: 1.25
+    space_before: "12pt"
+    space_after: "6pt"
+  2:
+    font:
+      font_family: "黑体"
+      font_size: "12pt"
+      bold: false
+    align: "left"
+    numbering: "chinese_paren"
+    level: 2
+    line_height: 1.25
+    space_before: "6pt"
+    space_after: "6pt"
+
+body_style:
+  font:
+    font_family: "宋体"
+    font_size: "12pt"
+    bold: false
+  align: "justify"
+  line_height: 1.25
+  first_line_indent: "2em"
+
+abstract_style:
+  font:
+    font_family: "楷体"
+    font_size: "12pt"
+    bold: false
+  align: "justify"
+  line_height: 1.25
+
+citation:
+  style: "numbered"
+  position: "footnote"
+  format_string: "{number}"
+  superscript: true
+
+reference_list:
+  enabled: false
+  sort_by: "appearance"
+  hanging_indent: "2em"
+  numbering_style: "numbered"
