@@ -1,25 +1,27 @@
-# 中文期刊 Word 排版工具
+# Journal DOCX Formatter
 
-把投稿网站上的格式要求，变成可复用的 Word 排版模板。
+把投稿网站上的格式要求，变成可复用、会持续学习的 Word 排版模板。📄
 
-中文期刊投稿体例常常写得很散：字号、行距、标题编号、脚注、参考文献、网格、匿名审稿要求混在一段说明里，有些还没有说完整。这个项目的目标是：你可以直接把期刊投稿网页、附件体例或自己的补充要求发给 agent，它会整理出一份可执行的排版模板，然后把 Markdown 或已有 `.docx` 稿件排成新的 Word 文件。
+很多期刊的投稿体例并不是一张清楚的格式表，而是散落在网页、附件和说明文字里：字号、行距、标题编号、脚注、参考文献、文档网格、匿名审稿要求，常常混在一起，有些还没有说完整。中文期刊可以用，英文期刊也可以用。
 
-它更像一个可沉淀的“中文期刊投稿排版规则库”：每次排版后的修正都会回到模板里，下一次继续使用。
+你不需要一开始就维护一套完美的默认模板。最简单的做法是：找到你要投稿的期刊，把投稿网页、附件体例或格式说明直接发给 agent。agent 会先整理出该期刊的投稿模板；没有写清楚的部分，会用默认规则兜底，或者列出来让你确认。
+
+默认模板不是必须的。你完全可以直接从某个期刊的投稿模板开始：先排一版，看输出效果，再把你发现的问题告诉 agent。比如“段后不要 10 磅”“参考文献不要悬挂缩进”“黑体不要自动加粗”。这些修正会写回对应期刊模板，下次再投同一个期刊，就会直接沿用更新后的规则。🧠
 
 ## 典型工作流
 
-1. 把期刊投稿网站上的格式要求直接发给 agent。
-2. agent 把要求整理成一份期刊模板，并标出缺失、冲突或暂时无法自动处理的项目。
-3. 你提供 Markdown 稿件或已有 Word 稿件。
-4. 工具生成一个新的 `.docx`，不覆盖原文件，同时输出处理报告。
-5. 你看完 Word 后提出修正，例如“段后不要 10 磅”“参考文献不要悬挂缩进”“黑体不要自动加粗”。
-6. 这些修正会写回对应期刊模板，下次再用这个期刊名时直接生效。
+1. 找到你要投稿的期刊要求，可以是网页、PDF、Word 附件或纯文字说明。
+2. 直接把这些要求发给 agent。
+3. agent 整理出一份期刊模板，并标出缺失、冲突或暂时无法自动处理的项目。
+4. 你提供 Markdown 稿件或已有 Word 稿件。
+5. 工具生成一个新的 `.docx`，不覆盖原文件，同时输出处理报告。
+6. 你看完 Word 后提出修正，这些修正会写回对应期刊模板。
 
 ## 能解决什么
 
 - 不想手工记每个期刊的 Word 格式。
 - 不想每次都重新设置正文、标题、摘要、关键词、参考文献。
-- 投稿体例没有写清楚时，需要一套稳定默认规则兜底。
+- 投稿体例没有写清楚时，希望 agent 帮你列出需要确认的地方。
 - 已经排过一次后，希望后续修正自动沉淀，而不是每次重新提醒。
 - 想保留原稿，只生成一份新的投稿格式 Word。
 
@@ -32,7 +34,7 @@
 
 ## 模板学习与自动更新
 
-默认规则只负责兜底；具体期刊模板会持续吸收你的修正。
+具体期刊模板会持续吸收你的修正。
 
 例如你用《中国社会科学》模板排版后发现某个细节不对，可以直接说：
 
@@ -42,19 +44,13 @@
 
 这条规则会写回 `templates/journals/中国社会科学.yaml`。以后再次让 agent 按《中国社会科学》排版时，就会直接使用更新后的模板，而不是依赖聊天记录或临时提醒。
 
-只有当你明确说“这应该成为所有中文期刊的默认规则”时，才会更新默认规则库。
+只有当你明确说“这应该成为所有期刊的默认规则”时，才会更新默认规则库。
 
-## 默认规则
+## 默认模板
 
-当期刊没有明确说明时，默认采用：
+默认模板不是使用前提。你可以直接从某个期刊投稿要求开始，让 agent 先生成该期刊模板。
 
-- 页面：A4，常见 Word 页边距，不自动添加页码。
-- 正文：宋体小四（12pt），两端对齐，1.25 倍行距，首行缩进 2 字符。
-- 西文：Times New Roman，默认允许西文断行。
-- 段距：段前段后默认为 0。
-- 网格：默认不启用文档网格或对齐网格。
-- 黑体：黑体默认不等于加粗，只有明确写“加粗/加黑”才设置加粗。
-- 参考文献：默认比正文小一号字，首行缩进 2 字符，不默认使用悬挂缩进。
+默认模板的作用是：当期刊要求没有写清楚时，提供一套基础排版兜底规则，并把仍需确认的项目暴露出来。
 
 默认规则库：
 
@@ -65,8 +61,8 @@ templates/defaults/中文期刊默认规则.yaml
 ## 模板目录
 
 ```text
-templates/defaults/   # 中文期刊通用默认规则
-templates/presets/    # GB/T 7714、脚注制、圈码上标等通用预设
+templates/defaults/   # 默认规则
+templates/presets/    # 通用预设
 templates/journals/   # 已确认的公开期刊投稿体例
 templates/custom/     # 用户自定义模板，按需本地创建
 ```
@@ -95,8 +91,10 @@ agent 会读取模板、生成新的 `.docx`，并把无法自动确认或暂未
 
 ## English
 
-`zh-journal-docx-formatter` turns Chinese journal submission requirements into reusable Word formatting templates.
+Turn journal submission guidelines into reusable, continuously improving Word formatting templates. 📄
 
-You can paste journal guidelines from a submission website, provide a Markdown or existing `.docx` manuscript, and generate a newly formatted Word file without overwriting the source document. Corrections made after reviewing the output can be written back into the corresponding journal template, so future runs reuse the improved style automatically.
+Journal formatting rules are often scattered across submission pages, PDF attachments, and style notes: fonts, spacing, heading numbering, footnotes, references, document grids, anonymization requirements, and many small exceptions. The workflow works for both Chinese and English-language journals.
 
-It is designed to be used through an agent workflow rather than as a command-line tool for end users.
+You do not need to build a perfect default template first. The simplest workflow is to find the journal you plan to submit to, send its submission guidelines to an agent, and let the agent turn those requirements into a journal-specific template. Missing or unclear parts can be filled by defaults or surfaced for confirmation.
+
+The default template is optional. You can start directly from a journal submission template, format one manuscript, review the output, and tell the agent what needs to change. Those corrections are written back into the corresponding journal template, so the next run uses the improved rules automatically. 🧠
