@@ -1,0 +1,188 @@
+format_spec_version: 1
+meta:
+  name: "中文期刊默认规则"
+  description: "中文期刊投稿体例未说明时使用的基础排版规则；不是任何单一期刊的投稿体例。"
+  source: "default"
+  version: "1"
+  notes: "期刊体例或用户指令给出相反要求时，以明确要求覆盖本默认规则。"
+page:
+  paper_size: "A4"
+  top_margin: "2.54cm"
+  bottom_margin: "2.54cm"
+  left_margin: "3.17cm"
+  right_margin: "3.17cm"
+  columns: 1
+paragraph:
+  font:
+    family: "宋体"
+    latin_family: "Times New Roman"
+    size: "12pt"
+  align: "justify"
+  line_height: 1.25
+  first_line_indent: "2em"
+  space_before: "0pt"
+  space_after: "0pt"
+headings:
+  "1":
+    level: 1
+    font:
+      family: "黑体"
+      size: "14pt"
+      bold: false
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+    auto_number: true
+    numbering: "chinese"
+  "2":
+    level: 2
+    font:
+      family: "黑体"
+      size: "12pt"
+      bold: false
+    align: "left"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+    auto_number: true
+    numbering: "chinese_paren"
+  "3":
+    level: 3
+    font:
+      family: "黑体"
+      size: "12pt"
+      bold: false
+    align: "left"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+    auto_number: true
+    numbering: "arabic"
+front_matter:
+  title:
+    font:
+      family: "黑体"
+      size: "16pt"
+      bold: false
+    align: "center"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  authors:
+    font:
+      family: "宋体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  affiliations:
+    font:
+      family: "宋体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  abstract:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  keywords:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+citations:
+  style: "author_year"
+  position: "in-text"
+  format_string: "（{author}，{year}：{page}）"
+  superscript: false
+references:
+  enabled: true
+  title:
+    font:
+      family: "黑体"
+      size: "12pt"
+      bold: false
+    align: "center"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  entry:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "justify"
+    line_height: 1.25
+    first_line_indent: "2em"
+    space_before: "0pt"
+    space_after: "0pt"
+  sort_by: "appearance"
+  hanging_indent: "0pt"
+  numbering_style: "none"
+  punctuation:
+    normalize: true
+    match_template: true
+figures_tables:
+  figure_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  table_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  table_note:
+    font:
+      family: "宋体"
+      size: "9pt"
+    align: "left"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  three_line_table: true
+advanced_word:
+  east_asian_line_break: true
+  latin_line_break: true
+  widow_control: null
+  keep_with_next: null
+  use_document_grid: false
+rules:
+  - id: "default.page"
+    description: "没有明确页面要求时使用 A4 和 Word 常见页边距，不自动添加页码。"
+  - id: "default.body"
+    description: "没有明确正文要求时使用宋体小四、两端对齐、1.25 倍行距、首行缩进 2 字符。"
+  - id: "default.spacing"
+    description: "没有明确段前段后要求时，段前段后均为 0。"
+  - id: "default.grid"
+    description: "没有明确要求时不启用文档网格或对齐网格。"
+  - id: "default.bold"
+    description: "黑体默认不等于加粗，只有明确写加粗或加黑时才加粗。"
+  - id: "default.references"
+    description: "参考文献默认比正文小一号字，首行缩进 2 字符，不使用悬挂缩进；条目要素和标点按期刊模板对齐。"
+  - id: "default.latin_line_break"
+    description: "默认允许西文断行。"
+unresolved_items: []

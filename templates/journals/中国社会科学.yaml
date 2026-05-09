@@ -1,0 +1,213 @@
+format_spec_version: 1
+meta:
+  name: "中国社会科学"
+  description: "根据《中国社会科学杂志社投稿须知》（2025-02-20）及附件《中国社会科学杂志社关于引文注释的规定》抽取的公开期刊模板。"
+  source: "journal"
+  journal: "中国社会科学"
+  notes: "公开模板聚焦研究论文类稿件；学术述评、读者评议等双栏稿件作为规则记录，不默认套用。"
+page:
+  paper_size: "A4"
+  top_margin: "2.54cm"
+  bottom_margin: "2.54cm"
+  left_margin: "3.17cm"
+  right_margin: "3.17cm"
+  columns: 1
+paragraph:
+  font:
+    family: "宋体"
+    latin_family: "Times New Roman"
+    size: "12pt"
+  align: "justify"
+  line_height: 1.25
+  first_line_indent: "2em"
+  space_before: "0pt"
+  space_after: "0pt"
+headings:
+  "1":
+    level: 1
+    font:
+      family: "黑体"
+      size: "14pt"
+      bold: false
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+    auto_number: true
+    numbering: "chinese"
+  "2":
+    level: 2
+    font:
+      family: "黑体"
+      size: "12pt"
+      bold: false
+    align: "left"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+    auto_number: true
+    numbering: "chinese_paren"
+  "3":
+    level: 3
+    font:
+      family: "黑体"
+      size: "12pt"
+      bold: false
+    align: "left"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+    auto_number: true
+    numbering: "arabic"
+front_matter:
+  title:
+    font:
+      family: "黑体"
+      size: "16pt"
+      bold: false
+    align: "center"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  authors:
+    font:
+      family: "宋体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  affiliations:
+    font:
+      family: "宋体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  abstract:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+  keywords:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    first_line_indent: null
+    line_height: 1.25
+    space_before: "0pt"
+    space_after: "0pt"
+citations:
+  style: "circled"
+  position: "footnote"
+  format_string: "{circled_number}"
+  superscript: true
+references:
+  enabled: false
+  title:
+    font:
+      family: "黑体"
+      size: "12pt"
+      bold: false
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  entry:
+    font:
+      family: "仿宋"
+      latin_family: "Times New Roman"
+      size: "10.5pt"
+    align: "justify"
+    line_height: 1.25
+    first_line_indent: "0pt"
+    space_before: "0pt"
+    space_after: "0pt"
+  sort_by: "none"
+  hanging_indent: "0pt"
+  numbering_style: "none"
+  punctuation:
+    format_profile: "cssn_footnote"
+    chinese_parentheses: "fullwidth"
+    chinese_punctuation: "fullwidth"
+figures_tables:
+  figure_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  table_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  table_note:
+    font:
+      family: "宋体"
+      size: "9pt"
+    align: "left"
+    first_line_indent: null
+    space_before: "0pt"
+    space_after: "0pt"
+  three_line_table: true
+advanced_word:
+  east_asian_line_break: true
+  latin_line_break: true
+  widow_control: null
+  keep_with_next: null
+  use_document_grid: true
+  raw_ooxml_hints:
+    document_grid:
+      characters_per_line: 36
+      lines_per_page: 35
+rules:
+  - id: "source.submission_notice"
+    description: "来源：中国社会科学杂志社投稿须知，2025-02-20，https://sscp.cssn.cn/tzgg/202502/t20250227_5849425.shtml。"
+  - id: "source.citation_attachment"
+    description: "来源：中国社会科学杂志社关于引文注释的规定；该规定适用于《中国社会科学》和《中国社会科学内部文稿》。"
+  - id: "submission.word_count"
+    description: "单篇稿件字数不超 2 万字；专题文章、笔谈文章、讨论与评议等另有较短字数要求。"
+  - id: "submission.anonymity"
+    description: "实行双向匿名专家审稿，正文中请勿出现作者个人信息，行文亦应避免透露作者身份。"
+  - id: "front_matter.english"
+    description: "需提供英文题目，300 字以内的中、英文摘要和 3-5 个中、英关键词。"
+  - id: "page.research_article_grid"
+    description: "研究论文类稿件 A4、正文简体横排、宋体小四，36 字 × 35 行。"
+  - id: "page.review_article_grid"
+    description: "学术述评、读者评议等稿件为 5 号宋体双栏，38 字 × 40 行；本模板不默认套用该双栏规则。"
+  - id: "notes.position"
+    description: "文献引证采用注释体例，注释放置于当页下；注释序号用①、②等标识，每页单独排序。"
+  - id: "notes.marker_position"
+    description: "正文中的注释序号统一置于包含引文的句子、词组或段落标点符号之后。"
+  - id: "notes.font"
+    description: "注释请用页下注，注文排 5 号仿宋体。"
+  - id: "notes.monograph"
+    description: "著作脚注顺序：责任者与责任方式、文献题名、出版地点、出版者、出版时间、页码。"
+  - id: "notes.journal"
+    description: "期刊脚注顺序：责任者、文献题名、期刊名、年期或卷期及出版年月。"
+  - id: "notes.newspaper"
+    description: "报纸脚注顺序：责任者、篇名、报纸名称、出版年月日、版次。"
+  - id: "notes.electronic"
+    description: "电子文献脚注顺序：责任者、电子文献题名、更新或修改日期、获取和访问路径、引用日期。"
+  - id: "notes.foreign"
+    description: "外文文献原则上使用该语种通行引证方式；英文文献题名、标点和页码按附件示例处理。"
+unresolved_items:
+  - path: "advanced_word.document_grid"
+    message: "36 字 × 35 行需要 Word 文档网格；第一版模板记录规则，脚本尚不完整生成文档网格 OOXML。"
+  - path: "notes.footnotes"
+    message: "脚注每页单独编号、圈码序号和脚注文字样式需要 Word 脚注域支持；第一版脚本记录规则，不自动完成脚注转换。"
+  - path: "front_matter.english"
+    message: "英文题目、中英文摘要和中英文关键词需要输入稿提供；第一版脚本不自动生成或翻译。"

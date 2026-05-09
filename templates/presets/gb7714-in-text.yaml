@@ -1,75 +1,143 @@
+format_spec_version: 1
 meta:
   name: "GB/T 7714 文中注"
-  description: "GB/T 7714 格式，引注以上标数字显示于文中"
+  description: "GB/T 7714 顺序编码文中注基础投稿模板"
   source: "preset"
-
+  journal: null
 page:
   paper_size: "A4"
   top_margin: "2.54cm"
   bottom_margin: "2.54cm"
   left_margin: "3.17cm"
   right_margin: "3.17cm"
-
-heading_styles:
-  1:
-    font:
-      font_family: "黑体"
-      font_size: "14pt"
-      bold: false
-    align: "center"
-    numbering: "chinese"
-    level: 1
-    line_height: 1.25
-    space_before: "12pt"
-    space_after: "6pt"
-  2:
-    font:
-      font_family: "黑体"
-      font_size: "12pt"
-      bold: false
-    align: "left"
-    numbering: "chinese_paren"
-    level: 2
-    line_height: 1.25
-    space_before: "6pt"
-    space_after: "6pt"
-  3:
-    font:
-      font_family: "黑体"
-      font_size: "12pt"
-      bold: false
-    align: "left"
-    numbering: "arabic"
-    level: 3
-    line_height: 1.25
-    space_before: "6pt"
-    space_after: "6pt"
-
-body_style:
+  columns: 1
+paragraph:
   font:
-    font_family: "宋体"
-    font_size: "12pt"
-    bold: false
+    family: "宋体"
+    latin_family: "Times New Roman"
+    size: "12pt"
   align: "justify"
   line_height: 1.25
   first_line_indent: "2em"
-
-abstract_style:
-  font:
-    font_family: "楷体"
-    font_size: "12pt"
-    bold: false
-  align: "justify"
-  line_height: 1.25
-
-citation:
+headings:
+  "1":
+    level: 1
+    font:
+      family: "黑体"
+      size: "14pt"
+    align: "center"
+    line_height: 1.25
+    first_line_indent: null
+    space_before: "12pt"
+    space_after: "6pt"
+    auto_number: true
+    numbering: "chinese"
+  "2":
+    level: 2
+    font:
+      family: "黑体"
+      size: "12pt"
+    align: "left"
+    line_height: 1.25
+    first_line_indent: null
+    space_before: "6pt"
+    space_after: "6pt"
+    auto_number: true
+    numbering: "chinese_paren"
+  "3":
+    level: 3
+    font:
+      family: "黑体"
+      size: "12pt"
+    align: "left"
+    line_height: 1.25
+    first_line_indent: null
+    space_before: "6pt"
+    space_after: "6pt"
+    auto_number: true
+    numbering: "arabic"
+front_matter:
+  title:
+    font:
+      family: "黑体"
+      size: "16pt"
+    align: "center"
+    line_height: 1.5
+    first_line_indent: null
+    space_after: "12pt"
+  authors:
+    font:
+      family: "宋体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+  abstract:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    line_height: 1.25
+    first_line_indent: null
+  keywords:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    line_height: 1.25
+    first_line_indent: null
+citations:
   style: "numbered"
   position: "in-text"
   format_string: "[{number}]"
   superscript: true
-
-reference_list:
+references:
   enabled: true
+  title:
+    font:
+      family: "黑体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+    space_before: "12pt"
+    space_after: "6pt"
+  entry:
+    font:
+      family: "宋体"
+      latin_family: "Times New Roman"
+      size: "10.5pt"
+    align: "justify"
+    line_height: 1.15
+    first_line_indent: "2em"
   sort_by: "appearance"
-  hanging_indent: "2em"
+  hanging_indent: "0pt"
   numbering_style: "numbered"
+figures_tables:
+  figure_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+  table_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+  table_note:
+    font:
+      family: "宋体"
+      size: "9pt"
+    align: "left"
+    first_line_indent: null
+  three_line_table: true
+advanced_word:
+  east_asian_line_break: null
+  latin_line_break: true
+  widow_control: true
+  keep_with_next: null
+  use_document_grid: false
+  character_spacing: null
+  raw_ooxml_hints: {}
+rules: []
+unresolved_items: []

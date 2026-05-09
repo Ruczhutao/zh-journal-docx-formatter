@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "pip"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chinese-paper-formatter"
+version = "0.1.0"
+description = "Codex skill source repo for formatting Chinese journal manuscripts as Word documents."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.0.0",
+    "python-docx>=1.1.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+cpf = "chinese_paper_formatter.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

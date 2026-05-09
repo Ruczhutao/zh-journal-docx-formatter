@@ -1,64 +1,122 @@
+format_spec_version: 1
 meta:
   name: "圆圈上标文中注"
-  description: "引注以圆圈数字显示于文中，常见于部分社科期刊"
+  description: "引注以圆圈数字显示于文中，常见于部分中文社科期刊"
   source: "preset"
-
 page:
   paper_size: "A4"
   top_margin: "2.54cm"
   bottom_margin: "2.54cm"
   left_margin: "3.17cm"
   right_margin: "3.17cm"
-
-heading_styles:
-  1:
-    font:
-      font_family: "黑体"
-      font_size: "16pt"
-      bold: false
-    align: "center"
-    numbering: "chinese"
-    level: 1
-    line_height: 1.5
-    space_before: "18pt"
-    space_after: "12pt"
-  2:
-    font:
-      font_family: "黑体"
-      font_size: "14pt"
-      bold: false
-    align: "left"
-    numbering: "chinese_paren"
-    level: 2
-    line_height: 1.25
-    space_before: "12pt"
-    space_after: "6pt"
-
-body_style:
+  columns: 1
+paragraph:
   font:
-    font_family: "宋体"
-    font_size: "12pt"
-    bold: false
+    family: "宋体"
+    latin_family: "Times New Roman"
+    size: "12pt"
   align: "justify"
   line_height: 1.25
   first_line_indent: "2em"
-
-abstract_style:
-  font:
-    font_family: "楷体"
-    font_size: "12pt"
-    bold: false
-  align: "justify"
-  line_height: 1.25
-
-citation:
+headings:
+  "1":
+    level: 1
+    font:
+      family: "黑体"
+      size: "16pt"
+    align: "center"
+    line_height: 1.5
+    first_line_indent: null
+    space_before: "18pt"
+    space_after: "12pt"
+    auto_number: true
+    numbering: "chinese"
+  "2":
+    level: 2
+    font:
+      family: "黑体"
+      size: "14pt"
+    align: "left"
+    first_line_indent: null
+    space_before: "12pt"
+    space_after: "6pt"
+    auto_number: true
+    numbering: "chinese_paren"
+  "3":
+    level: 3
+    font:
+      family: "黑体"
+      size: "12pt"
+    align: "left"
+    first_line_indent: null
+    auto_number: true
+    numbering: "arabic"
+front_matter:
+  title:
+    font:
+      family: "黑体"
+      size: "16pt"
+    align: "center"
+    first_line_indent: null
+  authors:
+    font:
+      family: "宋体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+  abstract:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    first_line_indent: null
+  keywords:
+    font:
+      family: "楷体"
+      size: "12pt"
+    align: "justify"
+    first_line_indent: null
+citations:
   style: "circled"
   position: "in-text"
   format_string: "{number}"
   superscript: true
-
-reference_list:
+references:
   enabled: true
+  title:
+    font:
+      family: "黑体"
+      size: "12pt"
+    align: "center"
+    first_line_indent: null
+  entry:
+    font:
+      family: "宋体"
+      latin_family: "Times New Roman"
+      size: "10.5pt"
+    align: "justify"
+    line_height: 1.15
+    first_line_indent: "2em"
   sort_by: "appearance"
-  hanging_indent: "2em"
+  hanging_indent: "0pt"
   numbering_style: "circled"
+figures_tables:
+  figure_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+  table_caption:
+    font:
+      family: "宋体"
+      size: "10.5pt"
+    align: "center"
+    first_line_indent: null
+  three_line_table: true
+advanced_word:
+  widow_control: true
+  use_document_grid: false
+  latin_line_break: true
+rules: []
+unresolved_items: []
